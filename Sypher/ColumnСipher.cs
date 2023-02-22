@@ -13,6 +13,7 @@ namespace Sypher
         char[] charsKey;
         char[] charsText;
         int[] keyNum;
+        string[,] arrayText;
         
 
         public void setKey(string key)
@@ -30,38 +31,45 @@ namespace Sypher
         public void splitText()
         {
             charsText = text.ToCharArray();
-            
         }
 
         public void findSize()
         {
-            int x = charsKey.Length;
-            int y;
-            if (x > charsText.Length)
-            {
-                y = 3;
-            }
-            else
-            {
-                y = charsKey.Length / x + 2; // доделать
-                //Math.Ceiling();
-            }
-            char[,] table = new char[y, x];
+            int width = charsKey.Length;
+            int high = charsText.Length / charsKey.Length + 1;
 
-            for (int i = 0; i < x; i++)
-            {
-                table[0, i] = charsKey[i];
-            }
+            Console.WriteLine(width);
+            Console.WriteLine(high);
 
-            for (int i = 2; i < y; i++)
-            {
-                for (int j = 0; j < x; j++)
-                {
-                    table[i, j] = charsText[j];
-                    Console.Write(table[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
+
+
+            //int width = charsKey.Length;
+            //int high;
+            //if (width > charsText.Length)
+            //{
+            //    high = 3;
+            //}
+            //else
+            //{
+            //    high = charsKey.Length / width + 2; // доделать
+            //    //Math.Ceiling();
+            //}
+            //char[,] table = new char[width, high];
+
+            //for (int i = 0; i < high; i++)
+            //{
+            //    table[0, i] = charsKey[i];
+            //}
+
+            //for (int i = 2; i < high; i++)
+            //{
+            //    for (int j = 0; j < width; j++)
+            //    {
+            //        table[i, j] = charsText[j];
+            //        Console.Write(table[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
 
