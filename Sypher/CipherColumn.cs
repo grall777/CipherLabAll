@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sypher
 {
-    class Transposition
+    class CipherColumn
     {
         private int[] key = null;
 
@@ -69,5 +69,32 @@ namespace Sypher
 
             return result;
         }
+
+        public int[] findQueue(string key)
+        {
+            int[] keyNumBuff = new int[key.Length];
+            int number = 1;
+            for (int i = 'а'; i <= 'я'; i++)
+            {
+                for (int j = 0; j < key.Length; j++)
+                {
+                    if (key[j] == i)
+                    {
+                        keyNumBuff[j] = number;
+                        number++;
+                    }
+                }
+
+            }
+            string text = "";
+            for (int i = 0; i < keyNumBuff.Length; i++)
+            {
+                text += (keyNumBuff[i] + " ");
+            }
+
+            return keyNumBuff;
+            
+        }
+
     }
 }
