@@ -12,7 +12,7 @@ namespace Sypher
 
             cc.setKey("Пиво");
             cc.splitKey();
-            cc.setText("Выпивать");
+            cc.setText("Выпивать пиво плохо для здоровья человеков");
             cc.splitText();
             cc.findSize();
 

@@ -26,7 +26,7 @@ namespace Sypher
         }
         public void setText(string text)
         {
-            this.text = text;
+            this.text = text.Replace(" ", "");
         }
         public void splitText()
         {
@@ -36,41 +36,37 @@ namespace Sypher
         public void findSize()
         {
             int width = charsKey.Length;
-            int high = charsText.Length / charsKey.Length + 1;
+            int high = charsText.Length / charsKey.Length + 2;
 
             Console.WriteLine(width);
             Console.WriteLine(high);
 
+            int buffer = 0;
 
+            string[,] arrTxt = new string[high, width];
 
-            //int width = charsKey.Length;
-            //int high;
-            //if (width > charsText.Length)
-            //{
-            //    high = 3;
-            //}
-            //else
-            //{
-            //    high = charsKey.Length / width + 2; // доделать
-            //    //Math.Ceiling();
-            //}
-            //char[,] table = new char[width, high];
+            for (int i = 0; i < high; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    if (buffer < text.Length)
+                    {
+                        arrTxt[i, j] = Convert.ToString(text[buffer]);
+                        buffer++;
+                        Console.Write(arrTxt[i, j]);
+                    }
 
-            //for (int i = 0; i < high; i++)
-            //{
-            //    table[0, i] = charsKey[i];
-            //}
-
-            //for (int i = 2; i < high; i++)
-            //{
-            //    for (int j = 0; j < width; j++)
-            //    {
-            //        table[i, j] = charsText[j];
-            //        Console.Write(table[i, j] + " ");
-            //    }
-            //    Console.WriteLine();
-            //}
+                }
+                Console.WriteLine();
+            }
+            this.arrayText = arrTxt;
         }
+
+        public void findQueue()
+        {
+            
+        }
+
 
 
 
