@@ -5,6 +5,9 @@ namespace Sypher
     {
         static void Main(string[] args)
         {
+
+            //ColumnCip cc = new ColumnCip();
+
             ColumnСipher cc = new ColumnСipher();
 
             cc.setKey("Пиво");
@@ -12,7 +15,7 @@ namespace Sypher
             cc.setText("Выпивать");
             cc.splitText();
             cc.findSize();
-            
+
         }
     }
 }
