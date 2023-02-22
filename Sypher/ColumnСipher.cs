@@ -35,32 +35,27 @@ namespace Sypher
 
         public void findSize()
         {
-
-        }
-
-        public void findSize()
-        {
-            int width = charsKey.Length;
-            int high;
-            if (width > charsText.Length)
+            int x = charsKey.Length;
+            int y;
+            if (x > charsText.Length)
             {
-                high = 3;
+                y = 3;
             }
             else
             {
-                high = charsKey.Length / width + 2; // доделать
+                y = charsKey.Length / x + 2; // доделать
                 //Math.Ceiling();
             }
-            char[,] table = new char[high, width];
+            char[,] table = new char[y, x];
 
-            for (int i = 0; i < width; i++)
+            for (int i = 0; i < x; i++)
             {
                 table[0, i] = charsKey[i];
             }
 
-            for (int i = 2; i < high; i++)
+            for (int i = 2; i < y; i++)
             {
-                for (int j = 0; j < width; j++)
+                for (int j = 0; j < x; j++)
                 {
                     table[i, j] = charsText[j];
                     Console.Write(table[i, j] + " ");
