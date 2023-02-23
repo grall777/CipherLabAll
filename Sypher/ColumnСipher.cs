@@ -83,20 +83,20 @@ namespace Sypher
             string text = "";
             int buffer = 0;
 
-            for (int i = 0; i < high; i++)
+            for (int i = 0; i < keyNum.Length; i++)
             {
-                for (int j = 0; j < width; j++)
+                for (int j = 0; j < keyNum.Length; j++)
                 {
-                    for (int k = 0; k < keyNum.Length; k++)
+                    if (i == keyNum[j])
                     {
-                        if (buffer == keyNum[k])
+                        for (int k = 0; k < high; k++)
                         {
-                            text += arrayText[k, j];
-                            Console.WriteLine(text);
+                            text += arrayText[k,j];
                         }
                     }
                 }
             }
+            Console.WriteLine();
             Console.WriteLine(text);
         }
 
