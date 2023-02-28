@@ -100,6 +100,58 @@ namespace Sypher
             Console.WriteLine(text);
         }
 
+        public void decrypt(string key, string text)
+        {
+            setKey(key);
+            setText(text);
+            findQueue();
+            findSize();
+            int high = arrayText.GetLength(0);
+            int width = arrayText.GetLength(1);
+            int notFill = (high - 1) * width - text.Length;
+            string decryptText = "";
+            int buffer = 0;
+            string[,] arrayDecrypt = new string[high, width];
+            for (int i = 0; i < keyNum.Length; i++)
+            {
+                for (int j = 0; j < keyNum.Length; j++)
+                {
+                    if (i == keyNum[j])
+                    {
+                        if (j < width - notFill && buffer < text.Length - 1)
+                        {
+                            for (int k = 0; k < high - 1; k++)
+                            {
+                                
+                                arrayDecrypt[k, j] = Convert.ToString(text[buffer]);
+                                buffer++;
+                                Console.WriteLine(arrayDecrypt[k,j] + k + j);
+                            }
+                        }
+                        else if (j >= width - notFill && buffer < text.Length - 1)
+                        {
+                            for (int k = 0; k < high - 2; k++)
+                            {
+                                arrayDecrypt[k, j] = Convert.ToString(text[buffer]);
+                                buffer++;
+                                Console.WriteLine(arrayDecrypt[k, j] + k + j);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < arrayDecrypt.GetLength(0); i++)
+            {
+                for (int j = 0; j < arrayDecrypt.GetLength(1); j++)
+                {
+                    decryptText += arrayDecrypt[i, j];
+                    Console.Write(arrayDecrypt[i,j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine(decryptText);
+
+        }
 
     }
 }

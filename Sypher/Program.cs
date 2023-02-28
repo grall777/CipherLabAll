@@ -10,7 +10,8 @@ namespace Sypher
             cc.setText("перваялабораторнаяработапокиоки");
             cc.findSize();
             cc.findQueue();
-            cc.encrypt();
+            cc.encrypt(); // бблрирркртптпяяквниеооааааоооаа
+            cc.decrypt("криптография", "бблрирркртптпяяквниеооааааоооаа");
 
             //CipherColumn ts = new CipherColumn();
             //int[] key = ts.findQueue("абв");
