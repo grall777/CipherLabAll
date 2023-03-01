@@ -27,8 +27,8 @@ namespace Sypher
             int width = key.Length;
             int high = text.Length / key.Length + 2;
 
-            Console.WriteLine(width);
-            Console.WriteLine(high);
+           // Console.WriteLine(width);
+           // Console.WriteLine(high);
 
             int buffer = 0;
 
@@ -42,11 +42,11 @@ namespace Sypher
                     {
                         arrTxt[i, j] = Convert.ToString(text[buffer]);
                         buffer++;
-                        Console.Write(arrTxt[i, j]);
+                     //   Console.Write(arrTxt[i, j]);
                     }
 
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
             }
             this.arrayText = arrTxt;
         }
@@ -70,7 +70,7 @@ namespace Sypher
 
             for (int i = 0; i < keyNumBuff.Length; i++)
             {
-                Console.Write(keyNumBuff[i] + " ");
+                //Console.Write(keyNumBuff[i] + " ");
             }
 
             this.keyNum = keyNumBuff;
@@ -96,7 +96,7 @@ namespace Sypher
                     }
                 }
             }
-            Console.WriteLine();
+          //  Console.WriteLine();
             Console.WriteLine(text);
         }
 
@@ -125,7 +125,7 @@ namespace Sypher
                                 
                                 arrayDecrypt[k, j] = Convert.ToString(text[buffer]);
                                 buffer++;
-                                Console.WriteLine(arrayDecrypt[k,j] + k + j);
+                              //  Console.WriteLine(arrayDecrypt[k,j] + k + j);
                             }
                         }
                         else if (j >= width - notFill && buffer < text.Length - 1)
@@ -134,7 +134,7 @@ namespace Sypher
                             {
                                 arrayDecrypt[k, j] = Convert.ToString(text[buffer]);
                                 buffer++;
-                                Console.WriteLine(arrayDecrypt[k, j] + k + j);
+                                //Console.WriteLine(arrayDecrypt[k, j] + k + j);
                             }
                         }
                     }
@@ -145,9 +145,9 @@ namespace Sypher
                 for (int j = 0; j < arrayDecrypt.GetLength(1); j++)
                 {
                     decryptText += arrayDecrypt[i, j];
-                    Console.Write(arrayDecrypt[i,j]);
+                  //  Console.Write(arrayDecrypt[i,j]);
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
             }
             Console.WriteLine(decryptText);
 
