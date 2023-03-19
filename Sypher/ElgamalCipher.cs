@@ -16,20 +16,17 @@ namespace Sypher
             int value = rnd.Next(0, 12);
             int[] simpleNumber = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 
                 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
-
             int p = simpleNumber[value];
-
             int g = 7;
 
 
 
-            List<int> rand = new List<int>();
+            List<int> randomList = new List<int>();
             for (int i = 2; i < p - 1; i++)
             {
-                rand.Add(i);
+                randomList.Add(i);
             }
-            int x = rand[rnd.Next(0, rand.Count)];
-
+            int x = randomList[rnd.Next(0, randomList.Count)];
             double y = Math.Pow(g, x) % p;
             int k = 0;
             for (int i = 2; i < p - 1; i++)
@@ -43,8 +40,9 @@ namespace Sypher
             double a = (Math.Pow(g, k)) % p;
             double b = (Math.Pow(y, k)) * M % p;
             double message = Decrypt(a, b, x, p);
-            Console.WriteLine("Шифротекст:(" + a + "," + b + ")");
-            Console.WriteLine("key: " + a + " " + b + " " + x + " " + p);
+            Console.WriteLine("CipherText:(" + a + "," + b + ")");
+            Console.WriteLine("Key: " + a + " " + b + " " + x + " " + p);
+            Console.WriteLine("DecryptText: " + message);
         }
 
         public double Decrypt(double a, double b, int x, int p)
