@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 namespace Sypher
 {
     class Program
@@ -24,10 +26,20 @@ namespace Sypher
             //Console.WriteLine(text);
 
 
-            Console.WriteLine();
-            Console.WriteLine("Шифр Elgamal:");
-            ElgamalCipher el = new ElgamalCipher();
-            el.Encrypt();
+            //Console.WriteLine();
+            //Console.WriteLine("Шифр Elgamal:");
+            //ElgamalCipher el = new ElgamalCipher();
+            //el.Encrypt();
+
+            GuillouQuisquater GQ = new GuillouQuisquater();
+            byte[] message = Encoding.UTF8.GetBytes("21");
+            byte[] encryptedMessage = GQ.Encrypt(message);
+            string encryptedString = Encoding.UTF8.GetString(encryptedMessage);
+            Console.WriteLine(encryptedString);
+            byte[] decryptedMessage = GQ.Decrypt(encryptedMessage);
+            string decryptedString = Encoding.UTF8.GetString(decryptedMessage);
+            Console.WriteLine(decryptedString);
+
 
         }
     }
