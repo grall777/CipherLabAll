@@ -31,14 +31,21 @@ namespace Sypher
             //ElgamalCipher el = new ElgamalCipher();
             //el.Encrypt();
 
+            Console.WriteLine("GuillouQuisquater шифр:");
             GuillouQuisquater GQ = new GuillouQuisquater();
             byte[] message = Encoding.UTF8.GetBytes("21");
             byte[] encryptedMessage = GQ.Encrypt(message);
+            Console.WriteLine("Зашифрованное сообщение:");
             string encryptedString = Encoding.UTF8.GetString(encryptedMessage);
             Console.WriteLine(encryptedString);
             byte[] decryptedMessage = GQ.Decrypt(encryptedMessage);
             string decryptedString = Encoding.UTF8.GetString(decryptedMessage);
+            Console.WriteLine("Расшифрованное сообщение:");
             Console.WriteLine(decryptedString);
+
+            Console.WriteLine("Второй пример кода GuillouQuisquater:");
+            GuillouQuisquaterVers2 GQ2 = new GuillouQuisquaterVers2();
+            GQ2.Cipher();
 
 
         }
