@@ -31,6 +31,12 @@ namespace Sypher
             //ElgamalCipher el = new ElgamalCipher();
             //el.Encrypt();
 
+            Console.WriteLine("RSA (lab3)");
+            RSAcipher rsa = new RSAcipher();
+            rsa.Check("Hello");
+
+
+
             Console.WriteLine("GuillouQuisquater шифр:");
             GuillouQuisquater GQ = new GuillouQuisquater();
             byte[] message = Encoding.UTF8.GetBytes("21");
@@ -43,7 +49,7 @@ namespace Sypher
             Console.WriteLine("Расшифрованное сообщение:");
             Console.WriteLine(decryptedString);
 
-            Console.WriteLine("Второй пример кода GuillouQuisquater:");
+            Console.WriteLine("Второй пример кода GuillouQuisquater (lab4):");
             GuillouQuisquaterVers2 GQ2 = new GuillouQuisquaterVers2();
             GQ2.Cipher();
 
